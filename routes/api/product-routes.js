@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { col } = require('sequelize/types');
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
@@ -78,7 +77,7 @@ router.post('/', (req, res) => {
   Product.create({
     product_name: req.body.product_name,
     price: req.body.price,
-    stock: req.body.price,
+    stock: req.body.stock,
     tagIds: req.body.tag_id
   })
     .then((product) => {
@@ -148,7 +147,7 @@ router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
   Product.destroy({
     where: {
-      id: req.body.id
+      id: req.params.id
     }
   })
     .then(dbProductData => {
