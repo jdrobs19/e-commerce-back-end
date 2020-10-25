@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
@@ -14,6 +16,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
   "bugs": {
     "url": "https://github.com/jdrobs19/e-commerce-back-end/issues"
   },
